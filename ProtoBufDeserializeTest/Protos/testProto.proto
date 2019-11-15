@@ -1,0 +1,42 @@
+﻿syntax = "proto3";
+package mediaRental;
+
+import "timestamp.proto";
+
+option csharp_namespace = "MediaRentals.DTOs";
+
+
+message DvdRental {
+  string DvdTitle = 1;
+
+  enum MovieGenre {
+    Action = 0;
+    Adventure = 1;
+	Comedy = 2;
+	Crime = 3;
+	Drama = 4;
+	Fantasy = 5;
+  }
+
+  MovieGenre DvdGenre = 2;
+
+  google.protobuf.Timestamp rentalDateTime = 3;
+}
+
+
+
+// Our address book file is just one of these.
+message BookRental {
+
+  string BookTitle = 1;
+  string BookAuthor = 2;
+
+  string ISBN13 = 3;
+
+  uint32 printLength = 4;
+
+  google.protobuf.Timestamp rentalDateTime = 5;
+}
+
+
+
